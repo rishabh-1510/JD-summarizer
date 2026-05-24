@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-const UploadResume = ({onUploadSucces}) => {
+const UploadResume = ({onUploadSuccess}) => {
     const[file,setFile] = useState(null);
     const[loading,setLoading] = useState(false);
     const[upload,setUpload] = useState(false);
@@ -17,13 +17,13 @@ const UploadResume = ({onUploadSucces}) => {
         try {
             
             const res = await fetch(`${import.meta.env.VITE_API_URL}/upload-resume`,{
-                method:post,
+                method:'post',
                 body:formData
             })
             const data = res.json();
             if(res.ok){
                 setUpload(true);
-                onUploadSucces();
+                onUploadSuccess();
             }else{
                 setError(data.error || 'Upload failed')
             }
