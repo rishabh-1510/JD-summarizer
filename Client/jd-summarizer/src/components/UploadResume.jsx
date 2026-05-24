@@ -1,12 +1,39 @@
 import React from 'react'
 import { useState } from 'react'
-const UploadResume = () => {
+const UploadResume = ({onUploadSucces}) => {
     const[file,setFile] = useState(null);
     const[loading,setLoading] = useState(false);
     const[upload,setUpload] = useState(false);
     const [error,setError] = useState("")
-    const handleUpload=()=>{
+    const handleUpload=async()=>{
+        if(!file){
+            return setError('Please upload resume PDF')
+        }
+        setLoading(true);
+        setError('');
+        const formData = new FormData();
+        formData.append('resume',file);
 
+        try {
+            
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/upload-resume`,{
+                method:post,
+                body:formData
+            })
+            const data = res.json();
+            if(res.ok){
+                setUpload(true);
+                onUploadSucces();
+            }else{
+                setError(data.error || 'Upload failed')
+            }
+
+        } catch (error) {
+            console.log(error)
+            setError('Server Not reachable')
+        }finally{
+            setLoading(false);
+        }
     }
 
     return (
