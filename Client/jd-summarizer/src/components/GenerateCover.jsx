@@ -16,7 +16,8 @@ const GenerateCover = ({ onGenerate }) => {
                 body: JSON.stringify({ jd }),
             })
 
-            const data = res.json()
+            const data = await res.json()
+            console.log('res is',data)
             if (res.ok) {
                 onGenerate(data.coverLetter);
             } else {

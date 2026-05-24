@@ -8,7 +8,10 @@ import { generatedCoverLetter } from './chain.js'
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true
+}));
 app.use(express.json());
 
 //Multer setup - saves uploaded PDF to /uploads folder
@@ -29,7 +32,7 @@ app.post('/upload-resume', upload.single('resume'), async (req, res) => {
 app.post('/generate', async (req, res) => {
     try {
         const { jd } = req.body
-        const coverLetter = await generateCoverLetter(jd)
+        const coverLetter = await generatedCoverLetter(jd)
         res.json({ coverLetter })
     } catch (err) {
         console.error(err)
