@@ -9,7 +9,7 @@ import { generatedCoverLetter } from './chain.js'
 dotenv.config();
 const app = express();
 app.use(cors({
-    origin: ["http://localhost:5173","http://localhost:4000"],
+    origin: ["http://localhost:5173","http://localhost:4000","https://jd-summarizer-six.vercel.app"],
     credentials: true
 }));
 app.use(express.json());
