@@ -9,7 +9,7 @@ import { generatedCoverLetter } from './chain.js'
 dotenv.config();
 const app = express();
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173","http://localhost:4000"],
     credentials: true
 }));
 app.use(express.json());
@@ -40,6 +40,8 @@ app.post('/generate', async (req, res) => {
     }
 })
 
-app.listen(3000, () => {
-    console.log('Server Running at 3000')
-})
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server Running at ${PORT}`);
+});
