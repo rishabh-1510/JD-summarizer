@@ -19,17 +19,17 @@ jobs:
 
       - name: Install server dependencies
         run: |
-          cd server
+          cd Server
           npm install --legacy-peer-deps
 
       - name: Install client dependencies
         run: |
-          cd client
+          cd Client/jd-summarizer
           npm install
 
       - name: Build client
         run: |
-          cd client
+          cd Client/jd-summarizer
           npm run build
 
       - name: Success
