@@ -224,9 +224,9 @@ See `.github/workflows/deploy.yml` for the pipeline config.
 B.Tech CSE — HMR Institute of Technology & Management, Delhi  
 National Finalist — Smart India Hackathon 2025  
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/your-profile)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/your-username)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-green)](https://your-portfolio.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/rishabh-belwal-66641628b)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/Rishabh-1510)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-green)](https://portfolio-lime-ten-98.vercel.app/)
 
 ---
 
